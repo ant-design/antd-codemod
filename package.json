@@ -3,7 +3,8 @@
   "description": "antd codemod scripts.",
   "scripts": {
     "lint": "eslint ./1.x-2.x ./0.12-1.x",
-    "test": "jest"
+    "eslint-fix": "eslint --fix ./1.x-2.x ./0.12-1.x",
+    "test": "npm run lint && jest"
   },
   "jest": {
     "testEnvironment": "node"
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/ant-design/antd-codemod#readme",
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "eslint": "^3.10.2",
     "eslint-config-egg": "^3.2.0",
     "jest": "^17.0.3",

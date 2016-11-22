@@ -1,3 +1,15 @@
 {
-  "extends": ["eslint-config-egg"]
+  "extends": ["eslint-config-egg"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "strict": 0
+  }
 }
