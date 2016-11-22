@@ -1,0 +1,34 @@
+{
+  "name": "antd-codemod",
+  "description": "antd codemod scripts.",
+  "scripts": {
+    "lint": "eslint ./1.x-2.x ./0.12-1.x",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ant-design/antd-codemod.git"
+  },
+  "keywords": [
+    "antd",
+    "codemod",
+    "scripts",
+    "update",
+    "jscodeshift"
+  ],
+  "author": "Benjy Cui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ant-design/antd-codemod/issues"
+  },
+  "homepage": "https://github.com/ant-design/antd-codemod#readme",
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-egg": "^3.2.0",
+    "jest": "^17.0.3",
+    "jscodeshift": "^0.3.30"
+  }
+}
