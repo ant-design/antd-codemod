@@ -25,6 +25,14 @@ Replace `getFieldProps` with `getFieldDecorator`.
 jscodeshift -t path-to/antd-codemod/1.x-2.x/getFieldProps-to-getFieldDecorator.js <path>
 ```
 
+`Popover-overlay-to-content`
+
+Replace `Popover[overlay]` with `Popover[content]`.
+
+```bash
+jscodeshift -t path-to/antd-codemod/1.x-2.x/Popover-overlay-to-content.js <path>
+```
+
 ## License
 
 MIT
