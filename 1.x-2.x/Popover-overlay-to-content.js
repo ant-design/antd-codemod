@@ -1,7 +1,10 @@
 'use strict';
 
+const getExtension = require('./getJscodeshiftExtension');
+
 module.exports = function(file, api) {
   const j = api.jscodeshift;
+  j.registerMethods(getExtension(j));
   const ast = j(file.source);
 
   ast.find(j.JSXOpeningElement, {
@@ -10,14 +13,11 @@ module.exports = function(file, api) {
       name: 'Popover',
     },
   }).map(nodePath => nodePath.get('attributes'))
-    .map(nodePath => {
-      const collection = j(nodePath).find(j.JSXAttribute, {
-        name: {
-          type: 'JSXIdentifier',
-          name: 'overlay',
-        },
-      }).filter(childNodePath => childNodePath.parentPath === nodePath);
-      return collection.__paths;
+    .children(j.JSXAttribute, {
+      name: {
+        type: 'JSXIdentifier',
+        name: 'overlay',
+      },
     })
     .map(nodePath => nodePath.get('name'))
     .replaceWith(j.jsxIdentifier('content'));
