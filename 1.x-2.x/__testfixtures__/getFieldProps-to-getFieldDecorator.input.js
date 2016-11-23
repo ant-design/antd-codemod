@@ -19,7 +19,7 @@ const NormalForm = Form.create()(React.createClass({ // eslint-disable-line no-u
 }));
 
 function StatelessForm(props) { // eslint-disable-line no-unused-vars
-  const { getFieldProps } = props.form;
+  const getFieldProps = props.form.getFieldProps;
 
   const nameProps = getFieldProps('name', {
     rules: [{ required: true, message: 'Please input your name!' }],
