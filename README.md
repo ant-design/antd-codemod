@@ -17,20 +17,39 @@ This repository contains a collection of codemod scripts based for use with [JSC
 
 ### 1.x-2.x
 
-`getFieldProps-to-getFieldDecorator`
+#### `getFieldProps-to-getFieldDecorator`
 
-Replace `getFieldProps` with `getFieldDecorator`.
+Replace deprecated `getFieldProps` with newer `getFieldDecorator`:
 
-```bash
-jscodeshift -t path-to/antd-codemod/1.x-2.x/getFieldProps-to-getFieldDecorator.js <path>
+```diff
+-  <Input placeholder="text" {...getFieldProps('userName', { ... })} />
++  {getFieldDecorator('userName', { ... })(
++    <Input placeholder="text" />
++  )}
 ```
 
-`Popover-overlay-to-content`
+#### `Popover-overlay-to-content`
 
-Replace `Popover[overlay]` with `Popover[content]`.
+`Popover[overlay]` is removed, so we need to replace it with `Popover[content]`:
 
-```bash
-jscodeshift -t path-to/antd-codemod/1.x-2.x/Popover-overlay-to-content.js <path>
+```diff
+- <Popover overlay={...} />
++ <Popover content={...} />
+```
+
+#### `time-related-value-to-moment`
+
+Update `value` `defaultValue` and `format` of `DatePicker` `TimePicker` `Calendar` `MonthPicker`(not support `RangePicker` now):
+
+```diff
++ import moment from 'moment';
+
+  <DatePicker
+-   defaultValue={moment('2016-11-24 00:00:00', 'YYYY-MM-DD HH:mm:ss')}
+    showTime
+-   format="yyyy-MM-dd HH:mm:ss"
++   format="YYYY-MM-DD HH:mm:ss"
+  />
 ```
 
 ## License
