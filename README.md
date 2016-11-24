@@ -45,7 +45,8 @@ Update `value` `defaultValue` and `format` of `DatePicker` `TimePicker` `Calenda
 + import moment from 'moment';
 
   <DatePicker
--   defaultValue={moment('2016-11-24 00:00:00', 'YYYY-MM-DD HH:mm:ss')}
+-   defaultValue="2016-11-24 00:00:00"
++   defaultValue={moment('2016-11-24 00:00:00', 'YYYY-MM-DD HH:mm:ss')}
     showTime
 -   format="yyyy-MM-dd HH:mm:ss"
 +   format="YYYY-MM-DD HH:mm:ss"
