@@ -53,6 +53,17 @@ Update `value` `defaultValue` and `format` of `DatePicker` `TimePicker` `Calenda
   />
 ```
 
+#### `GergorianCalendar-to-moment`
+
+Update GregorianCalendar's APIs to moment's APIs.
+
+```diff
+function disabledDate(date) {
+- console.log(date.getTime());
++ console.log(date.valueOf());
+}
+```
+
 ## License
 
 MIT
