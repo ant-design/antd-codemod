@@ -1,14 +1,7 @@
 'use strict';
 
 const getExtension = require('./getJscodeshiftExtension');
-
-function isTimeRelatedComponent(componentName) {
-  return [
-    'DatePicker', 'TimePicker',
-    'Calendar', 'MonthPicker',
-    // 'RangePicker' ignore RangePicker now
-  ].indexOf(componentName) > -1;
-}
+const utils = require('./utils');
 
 function oldFormatToNewFormat(format) {
   return format.split('').map(c => {
@@ -41,9 +34,7 @@ module.exports = function(file, api) {
   const template = j.template;
 
   const timeRelatedOpeningElementsAttrs = ast.find(j.JSXOpeningElement)
-          .filter(
-            nodePath => isTimeRelatedComponent(nodePath.get('name').get('name').value)
-          )
+          .filter(nodePath => utils.isTimeRelatedComponent(utils.getNameFieldValue(nodePath)))
           .map(nodePath => nodePath.get('attributes'));
 
   // update `format` to moment format
