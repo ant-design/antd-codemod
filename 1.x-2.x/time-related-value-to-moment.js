@@ -102,7 +102,7 @@ module.exports = function(file, api) {
     const importMomentStatement = ast.find(j.ImportDeclaration, {
       source: {
         type: 'Literal',
-        name: 'moment',
+        value: 'moment',
       },
     });
     if (importMomentStatement.size() === 0) {
