@@ -2,8 +2,8 @@
   "name": "antd-codemod",
   "description": "antd codemod scripts.",
   "scripts": {
-    "lint": "eslint ./1.x-2.x ./0.12-1.x",
-    "eslint-fix": "eslint --fix ./1.x-2.x ./0.12-1.x",
+    "lint": "eslint ./transforms",
+    "eslint-fix": "eslint --fix ./transforms",
     "test": "jest"
   },
   "jest": {
