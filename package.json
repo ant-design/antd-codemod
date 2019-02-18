@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "eslint ./1.x-2.x ./0.12-1.x",
     "eslint-fix": "eslint --fix ./1.x-2.x ./0.12-1.x",
-    "test": "npm run lint && jest"
+    "test": "jest"
   },
   "jest": {
     "testEnvironment": "node"
