@@ -1,7 +1,7 @@
 # antd-codemod
 
 [![](https://img.shields.io/travis/ant-design/antd-codemod.svg?style=flat-square)](https://travis-ci.org/ant-design/antd-codemod)
-[![Dependency Status](https://david-dm.org/ant-design/antd-codemod.svg?style=flat-square)](https://david-dm.org/ant-design/antd-codemod)
+[![Dependency Status](https://david-dm.org/ant-design/antd-codemod.svg?style=flat-square)](https://david-dm.org/ant-design/antd-codemod) [![Greenkeeper badge](https://badges.greenkeeper.io/ant-design/antd-codemod.svg)](https://greenkeeper.io/)
 
 This repository contains a collection of codemod scripts based for use with [JSCodeshift](https://github.com/facebook/jscodeshift) that help update `antd` APIs.
 
