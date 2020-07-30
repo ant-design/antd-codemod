@@ -30,7 +30,7 @@
     "babel-eslint": "^7.1.1",
     "eslint": "^3.10.2",
     "eslint-config-egg": "^3.2.0",
-    "jest": "^17.0.3",
+    "jest": "^26.2.1",
     "jscodeshift": "^0.3.30"
   }
 }
